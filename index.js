@@ -1,5 +1,10 @@
-// alert('its in here');
-
-const h1 = document.getElementById('head')
-console.log(h1.innerHTML)
-h1.innerHTML += ' by Akash, Dakshit, Tirth'
+const express=require('express');
+const bodyParser = require('body-parser');
+const app=express();
+const Searchroutes=require('./routes/search');
+app.use(bodyParser.json());
+app.listen('3000',() =>{
+    console.log("Server started ");
+});
+app.use('/search',Searchroutes);
+module.exports = app;
