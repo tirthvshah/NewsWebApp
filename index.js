@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const app=express();
 const Searchroutes=require('./routes/search');
 app.use(bodyParser.json());
+app.set('view engine', 'ejs');
 app.listen('3000',() =>{
     console.log("Server started ");
 });
