@@ -1,9 +1,8 @@
 const express=require('express');
 const bodyParser = require('body-parser');
 const app=express();
-const Searchroutes=require('./routes/search');
+const filterroutes=require('./routes/filters');
 const Headlineroute = require('./routes/headline')
-
 app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 
@@ -16,5 +15,5 @@ app.get('/',(req,res)=>{
 app.listen('3000',() =>{
     console.log("Server started ");
 });
-
+app.use('/filters',filterroutes);
 module.exports = app;
