@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 
 
-app.use('/search',Searchroutes);
+// app.use('/search',Searchroutes);
 app.use('/headlines',Headlineroute)
 app.get('/',(req,res)=>{
     res.redirect('/headlines')
@@ -15,5 +15,7 @@ app.get('/',(req,res)=>{
 app.listen('3000',() =>{
     console.log("Server started ");
 });
+
+app.use(express.static(__dirname + "/public"))
 app.use('/filters',filterroutes);
 module.exports = app;
