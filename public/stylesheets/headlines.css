@@ -8,7 +8,7 @@ body {
 #top-nav{
     grid-area: nav;
     background: #fff;
-    box-shadow: 0 0 4px 0 rgba(0,0,0,.1);
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
     border-bottom: 1px solid rgba(0,0,0,.1);
     position: fixed;
     width: 100vw;
@@ -17,21 +17,27 @@ body {
 }
 #sidebar{
     grid-area: sidebar;
-    justify-content: center;
     height: 100%;
     position: fixed;
     top: 70px;
-    left: 1%;
-    transition: all .3s ease; 
+    color: white;
+    transition: all .3s ease;
+    width: 300px;
+    background: #2f3640; 
+    box-shadow: 8px 0 10px -6px rgba(0,0,0,0.25);
 }
 #sidebar ul li{
     margin: 15px 5px;
     padding: 10px;
     font-size: 1.05em;
+    color: white;
+    position: relative;
+    left: 50%;
+    transform: translateX(-45%)
 }
 #sidebar ul li a{
     text-decoration: none;
-    color: #2f3640;
+    color: white;
 }
 .articles{
     grid-area: content;
@@ -52,7 +58,8 @@ body {
 #sidebarCollapse{
     border-radius: 50%;
     margin-top: 9px;
-    background: #e84118;
+    background: #2f3640;
+    color:#e84118;
 }
 .brand{
     font-size: 1.4em;
@@ -86,7 +93,7 @@ body {
     border-radius: 10px;
     margin: 20px 0;
     transform: translateX(-50%);
-
+    z-index: -9999;
 }
 .articles .imgcont{
     width: 100%;
@@ -157,9 +164,8 @@ body {
     #sidebar {
         margin-left: -300px;
         z-index: 999;
-        background: #fafafa;
         width: 300px;
-        top: 60px;
+        top: 70px;
         left: 0;
     }
     #sidebar.active {
@@ -169,6 +175,9 @@ body {
         position: relative;
         left: 50%;
         transform: translate(-30%,0);
+    }
+    #articles.active{
+        margin-left: 0;
     }
 }
 
@@ -186,9 +195,8 @@ body {
     #sidebar {
         margin-left: -300px;
         z-index: 999;
-        background: #fafafa;
         width: 300px;
-        top: 60px;
+        top: 70px;
         left: 0;
     }
     #sidebar.active {
@@ -199,7 +207,7 @@ body {
         justify-content: center;
     }
     #articles.active{
-        margin-left: 200px;
+        margin-left: 0px;
     }
     #articles .contain{
         width: 600px;
