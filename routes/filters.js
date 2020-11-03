@@ -20,12 +20,12 @@ routes.get('/country/:query',function(req,res){
 routes.get('/category/:query',function(req,res){
     var query=req.params.query;
    
-    axios.get(` https://newsapi.org/v2/top-headlines?category=${query}&apiKey=4b2821b99dd64a708f00564be388c26a`)
+    axios.get(` https://newsapi.org/v2/everything?q=${query}&apiKey=4b2821b99dd64a708f00564be388c26a`)
     .then(function(response){
         if(response.status==200){
-            console.log(response.data);
+            console.log(response.data.totalResults);
             res.render('filter',{
-                data:response.data
+                data:response.data.articles.slice(0,10)
             });
         }
      }); 

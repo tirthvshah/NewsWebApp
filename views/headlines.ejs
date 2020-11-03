@@ -60,7 +60,14 @@
                    </div>
                    <div class="remcont">
                         <h5 ><%= article.title %></h5>
-                        <p ><%= article.content%></p>
+                        <% if(article.content){ %>
+                        <p ><%= article.content.substring(0,150) %>...<a href="#">read more</a></p>
+                        <% } else if (!article.content) {%>
+                            <a href="#">Click to read full article</a>
+                        <% }%>
+                        <div class='src'>
+                            <small><%=article.source.name %><i class="far fa-check-circle ml-2"></i></small>
+                        </div>
                    </div>
                 </div>
             <% }) %>
@@ -71,9 +78,11 @@
         var but = document.getElementById('sidebarCollapse')
         var sidebar = document.getElementById('sidebar')
         var article = document.getElementById('articles')
+        // var wrap = document.getElementsByClassName('wrapper')
         but.addEventListener('click',()=>{
             sidebar.classList.toggle('active')
             article.classList.toggle('active')
+            // wrap[0].classList.toggle('active')
         })
     </script>
  
