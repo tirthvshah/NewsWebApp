@@ -7,6 +7,7 @@ const user=require('./routes/user');
 const Headlineroute = require('./routes/headline');
 const passport=require('passport');
 const { ensureAuthenticated} = require('./config/auth');
+const flash = require('connect-flash');
 const session = require('express-session');
 
 app.use(
@@ -21,6 +22,13 @@ app.use(passport.session());
 app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
+app.use(flash());
+app.use(function(req, res, next) {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  next();
+});
 
 // app.use('/search',Searchroutes);
 app.use('/headlines',ensureAuthenticated,Headlineroute)
