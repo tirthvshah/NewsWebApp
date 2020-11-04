@@ -58,6 +58,7 @@ routes.post('/register',(req,res)=>{
                     if(err){
                         throw err;
                     }
+                    req.flash('success_msg','You are now registered and can log in');
                     res.redirect('/users/login');
                 })
             }
@@ -68,12 +69,14 @@ routes.post('/register',(req,res)=>{
 routes.post('/login', (req, res, next) => {
     passport.authenticate('local', {
       successRedirect: '/',
-      failureRedirect: '/users/login'
+      failureRedirect: '/users/login',
+      failureFlash:true
     })(req, res, next);
   });
   
   routes.get('/logout',(req,res)=>{
     req.logout();
+    req.flash('success_msg', 'You are logged out');
     res.redirect('/users/login')
   });
 
