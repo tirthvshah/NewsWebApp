@@ -150,6 +150,118 @@ body {
     width: 600px;
 }
 
+.containers{
+    width: 400px;
+    height: 350px;
+    position: absolute;
+    top: 90px;
+    left: 73%;
+    display: flex;
+    border:1px solid #dadce0;
+    border: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.4);
+    transition: .3s all ease-out;
+}
+.containers.content{
+    padding: 40px;
+    margin-top: 50px;
+}
+.containers .general-info{
+    color: #2f3640;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+.status{
+    
+  font-size: 2rem;
+  font-weight: bold;
+}
+.location {
+    font-size: 1.4rem;
+    font-weight: normal;
+    margin-top: 10px;
+  }
+/* .containers */
+.containers .details-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 0;
+    flex-grow: 1;
+    padding:5px 20px;
+}
+.detail.bordered {
+    border-left: 1px solid rgba(119,119,119,.8);
+    border-right: 1px solid rgba(119,119,119.8);
+}
+
+.detail .title {
+    font-size: 1.2rem;
+    flex-grow: 1;
+    font-weight: bold;
+    color: #777;
+}
+.detail .value {
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+.city-search-contain {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5%;
+    background: #2f3640;
+    height: 50px;
+    border-radius: 40px;
+    padding: 10px;
+    transition: .4s all;
+}
+
+#city-search{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding:0;
+    color: white;
+    font-size: 16px;
+    transition:.4s;
+    line-height: 30px;
+    width: 0px;
+}
+#btn-search{
+    color:#e84118;
+    border: none;
+    outline: none;
+    float: right;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s;
+}
+.city-search-contain:hover #city-search{
+    width: 150px;
+}
+.city-search-contain:hover #btn-search{
+    background: white;
+}
+
+.containers.active{
+    margin-left: -180px;
+}
+
+
 @media (max-width:1300px){
     .search-txt{
         width: 500px;
@@ -275,3 +387,9 @@ body {
         background: white;
     }    
 }
+
+
+
+
+/* weather */
+

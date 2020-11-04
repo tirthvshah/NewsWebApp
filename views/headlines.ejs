@@ -9,6 +9,10 @@
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+    <!-- <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBC2CS-TwA0OJ6W2Nm15TphdB43s78-wl4&libraries=places&callback=initMap"> -->
+    <!-- </script> -->
+    <!-- <script defer src='js/weather.js'></script> -->
+
 </head>
 <body>
     <div class="wrapper">
@@ -72,20 +76,54 @@
                 </div>
             <% }) %>
         </div>
+
+        <div class="containers row justify-content-center">
+            <div class="content">
+                <div class="general-info ">
+                    <div class="status" data-overcast>Enter a Location</div><i class="fas fa-cloud-sun"></i>
+                    <div class="location" data-location>To Find The Weather</div>
+                </div>
+                <div class="details-section ">
+                    <div class="detail">
+                        <div class="title">Wind</div><i class="fas fa-fan"></i>
+                        <div class="value" data-wind>TBD</div>
+                    </div>
+                    <div class="detail bordered">
+                        <div class="title">Temperature</div><i class="fas fa-temperature-low"></i>
+                        <div class="value" data-temperature>TBD</div>
+                    </div>           
+                    <div class="detail">
+                        <div class="title" >Weather</div><i class="fas fa-cloud-moon"></i>
+                        <div class="value" data-weather>TBD</div>
+                    </div>
+                </div>
+                <div class="city-search-contain">
+                    <input type="text" id="city-search" placeholder="Enter Location" data-city-search>
+                    <button id="btn-search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>       
     </div>
+
     
     <script>
         var but = document.getElementById('sidebarCollapse')
         var sidebar = document.getElementById('sidebar')
         var article = document.getElementById('articles')
-        // var wrap = document.getElementsByClassName('wrapper')
+        var weather = document.getElementsByClassName('containers')
         but.addEventListener('click',()=>{
             sidebar.classList.toggle('active')
             article.classList.toggle('active')
+            weather[0].classList.toggle('active')
             // wrap[0].classList.toggle('active')
         })
     </script>
  
+    <script  src="fetch.js"></script>
+    <script  src="ui.js"></script>
+    <script  src="app.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
