@@ -35,11 +35,15 @@ app.use('/headlines',ensureAuthenticated,Headlineroute)
 app.get('/',(req,res)=>{
     res.redirect('/headlines')
 })
+// app.post('/weather',(req,res)=>{
+//   console.log(req.body)
+// })
+
 app.listen('3000',() =>{
     console.log("Server started ");
 });
 
-app.use(express.static(__dirname + "/public"))
+app.use(express.static('public'))
 app.use('/filters',ensureAuthenticated,filterroutes);
 app.use('/users',user);
 module.exports = app;
