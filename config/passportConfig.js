@@ -7,8 +7,6 @@ passport.use(
         usernameField:'email'
     },
     function(email,password,done){
-        console.log(email);
-        console.log(password);
         let sql=`SELECT * FROM users WHERE email= "${email}"`;
         database.query(sql,(err,result)=>{
             if(err){
@@ -16,7 +14,6 @@ passport.use(
             }
             if(result.length>0){
                 if(PasswordHash.verify(password,result[0].password)){
-                    console.log("Sucess");
                     return done(null,result[0]);
                 }else{
                     return done(null,false,{message:'Email Or Password Does not match'});
@@ -29,7 +26,6 @@ passport.use(
 );
 
 passport.serializeUser(function(user, done) {
-    console.log("Serialize"+user.id);
     done(null, user.id);
   });
   

@@ -24,8 +24,8 @@ router.get('/',(req,res)=>{
     axios.get(`http://newsapi.org/v2/top-headlines?country=in&apiKey=4b2821b99dd64a708f00564be388c26a`)
     .then(response=>{
         if(response.status == 200){
-            console.log(response.data.articles)
-            console.log(response.data.totalResults)
+/*             console.log(response.data.articles)
+            console.log(response.data.totalResults) */
             res.render('headlines',{data:response.data.articles})
         }
     })
