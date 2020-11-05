@@ -8,7 +8,7 @@ router.get('/',function(req,res){
     .then(function(response){
         if(response.status==200){
            // console.log(response.data.totalResults);
-            res.render('search',{
+            res.render('headlines',{
                data: response.data.articles
             });
         }
