@@ -7,9 +7,9 @@ routes.get('/country/:query',function(req,res){
     axios.get(`https://newsapi.org/v2/top-headlines?country=${query}&apiKey=4b2821b99dd64a708f00564be388c26a`)
     .then(function(response){
         if(response.status==200){
-            //console.log(response.data);
-            res.render('filter',{
-                data:response.data
+            console.log(response.data.articles.splice(0,10));
+            res.render('headlines',{
+                data:response.data.articles.splice(0,10)
             });
         }
      }); 
@@ -25,7 +25,7 @@ routes.get('/category/:query',function(req,res){
         if(response.status==200){
            // console.log(response.data.totalResults);
             res.render('headlines',{
-                data:response.data.articles.slice(0,10)
+                data:response.data.articles.splice(0,20)
             });
         }
      }); 

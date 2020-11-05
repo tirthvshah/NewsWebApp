@@ -26,11 +26,11 @@
                     <h5 class="brand">Mirai News</h5>
 
                     <div class="search-box">
-                        <form action="#">
-                            <input type="text" class="search-txt" placeholder="Search Sources, topics & Locations">
-                            <a class="search-btn" href="#">
+                        <form action="/search" method="GET">
+                            <input type="text" class="search-txt" placeholder="Search Sources, topics & Locations" name="q">
+                            <button class="search-btn" type="submit">
                                 <i class="fas fa-search"></i>
-                            </a>
+                            </button>
                         </form>
                     </div>
         
@@ -46,7 +46,7 @@
                 <hr>
                 <li><i class="fas fa-laptop-medical mr-2"></i><a href="/filters/category/Covid">COVID-19</a></li>
                 <hr>
-                <li><i class="fab fa-font-awesome-flag mr-2"></i><a href="/filters/category/India">India</a></li>
+                <li><i class="fab fa-font-awesome-flag mr-2"></i><a href="/filters/country/in">India</a></li>
                 <li><i class="fas fa-globe-asia mr-2"></i><a href="/filters/category/World">World</a></li>
                 <li><i class="fas fa-briefcase mr-2"></i><a href="/filters/category/Business">Business</a></li>
                 <li><i class="fas fa-microchip mr-2"></i><a href="/filters/category/Technology">Technology</a></li>

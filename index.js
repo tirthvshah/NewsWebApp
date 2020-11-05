@@ -3,6 +3,7 @@ const express=require('express');
 const bodyParser = require('body-parser');
 const app=express();
 const filterroutes=require('./routes/filters');
+const Searchroutes=require('./routes/search');
 const user=require('./routes/user');
 const Headlineroute = require('./routes/headline');
 const passport=require('passport');
@@ -45,5 +46,6 @@ app.listen('3000',() =>{
 
 app.use(express.static('public'))
 app.use('/filters',ensureAuthenticated,filterroutes);
+app.use('/search',ensureAuthenticated,Searchroutes);
 app.use('/users',user);
 module.exports = app;
