@@ -13,7 +13,6 @@ routes.get('/login',(req,res)=>{
 
 routes.post('/register',(req,res)=>{
     const { name, email, password, password2 } = req.body;
-    console.log(req.body);
   let errors = [];
 
   if (!name || !email || !password || !password2) {
