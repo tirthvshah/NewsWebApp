@@ -7,7 +7,7 @@ const Searchroutes=require('./routes/search');
 const user=require('./routes/user');
 const Headlineroute = require('./routes/headline');
 const passport=require('passport');
-const { ensureAuthenticated} = require('./config/auth');
+const { ensureAuthenticated,forwardAuthenticated} = require('./config/auth');
 const flash = require('connect-flash');
 const session = require('express-session');
 
@@ -47,5 +47,11 @@ app.listen('3000',() =>{
 app.use(express.static('public'))
 app.use('/filters',ensureAuthenticated,filterroutes);
 app.use('/search',ensureAuthenticated,Searchroutes);
-app.use('/users',user);
+app.use('/users',forwardAuthenticated,user);
+app.get('/logout',(req,res)=>{
+  req.logout();
+  req.flash('success_msg', 'You are logged out');
+  res.redirect('/users/login')
+});
+
 module.exports = app;
