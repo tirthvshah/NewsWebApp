@@ -32,4 +32,11 @@ routes.get('/category/:query',function(req,res){
      
 
 });
+
+routes.post('/data',function(req,res){
+    var query=req.body;
+    res.render('embedd',{
+       data:query
+    })
+ });
 module.exports=routes;

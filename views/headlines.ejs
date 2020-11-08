@@ -65,7 +65,10 @@
                    <div class="remcont">
                         <h5 ><%= article.title %></h5>
                         <% if(article.content){ %>
-                        <p ><%= article.content.substring(0,150) %>...<a href="<%=article.url %>">read more</a></p>
+                        <p ><%= article.content.substring(0,150) %>...<form method="post" action="filters/data">
+                            <input type="hidden" name="name" value="<%=article.url %>" /> 
+                            <a onclick="this.parentNode.submit();">click here</a>
+                          </form></p>
                         <% } else if (!article.content) {%>
                             <a href="#">Click to read full article</a>
                         <% }%>
