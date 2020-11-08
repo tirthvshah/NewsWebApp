@@ -7,9 +7,9 @@ routes.get('/login',(req,res)=>{
     res.render('login');
 });
 
-routes.get('/register',(req,res)=>{
-    res.render('register');
-})
+// routes.get('/register',(req,res)=>{
+//     res.render('register');
+// })
 
 routes.post('/register',(req,res)=>{
     const { name, email, password, password2 } = req.body;

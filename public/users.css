@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.bg{
+    height: 100%;
+    width: 100%;
+    /* background-image: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),url('bg-pic.jpeg'); */
+    background-position: center;
+    background-size: cover;
+    /* background-image: ; */
+    position: absolute;
+}
+.form-box{
+    width: 350px;
+    height: 450px;
+    position: relative;
+    margin: 6% auto;
+    background:#fff;
+    padding: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 15px 3px #2f3640;
+
+}
+.btn-box{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+}
+.toggle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    position: relative;
+}
+.toggle-btn:first-of-type{
+    color: white;
+}
+.btn-contain{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: #2f3640;
+    border-radius: 30px;
+    transition: .5s;
+}
+.inp-form{
+    top: 100px;
+    position: absolute;
+    width: 260px;
+    transition: .5s;
+}
+.inp-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 10px 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+.submit{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    left: 50%;
+    background: linear-gradient(to right,#2f3640,#2f3640 );
+    border: none;
+    margin-top: 40px;
+    outline: none;
+    border-radius: 30px;
+    color: white;
+}
+
+#login{
+    left: 450px;
+}
+#signup{
+    left: 50px;
+}
+#newUse{
+    background: transparent;
+    border: none;
+    color:blue ;
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -1,34 +1,77 @@
-<div class="row mt-5">
-    <div class="col-md-6 m-auto">
-      <div class="card card-body">
-        <h1 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i>  Login</h1>
-        <%- include('./partials/messages'); %>
-        <form action="/users/login" method="POST">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input
-              type="email"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/users.css">
+</head>
+<body>
+
+    <div class="bg">
+        <div class="form-box">
+            <%- include('./partials/messages'); %>
+            <div class="btn-box">
+                <div class="btn-contain"></div>
+                <button type="button" class="toggle-btn signup" onclick="signup()">Sign up</button>
+                <button type="button" class="toggle-btn login" onclick="login()">Log in</button>
+            </div>
+            <form id="signup" class="inp-form" action="/users/register" method="POST">
+              <input class="inp-field form-control"
+              required
+              id="name"
+              type="name"
+              name="name"
+              placeholder="Enter Name"
+              value="<%= typeof name != 'undefined' ? name : '' %>"
+              >
+              <input type="email" name="email" class="form-control inp-field"
+              placeholder="Email" 
               id="email"
-              name="email"
-              class="form-control"
-              placeholder="Enter Email"
-            />
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              class="form-control"
-              placeholder="Enter Password"
-            />
-          </div>
-          <button type="submit" class="btn btn-primary btn-block">Login</button>
-        </form>
-        <p class="lead mt-4">
-          No Account? <a href="/users/register">Register</a>
-        </p>
-      </div>
+              required 
+              value="<%= typeof email != 'undefined' ? email : '' %>" 
+              >
+              <input type="password" id="password" name="password" class="form-control inp-field"
+              placeholder="Create Password" required 
+              value="<%= typeof password != 'undefined' ? password : '' %>"
+              >
+              <input type="password" id="password2" name="password2" class="form-control inp-field"
+              placeholder="Confirm Password" required value="<%= typeof password1 != 'undefined'?password2:'' %>"
+              >
+              <span>Already have account <button id="newUse" onclick="login()">Login</button></span>
+              <button type="submit" class="submit">Sign up</button>
+            </form>
+            <form action="/users/login" method="POST" id="login" class="inp-form">
+                <input type="email" id="email" name="email" class="form-control inp-field" placeholder="Enter Email" required>
+                <input type="password" id="password" class="form-control inp-field" placeholder="Enter password" required>
+                <span>new user? <button id="newUse" onclick="signup()">Sign up</button></span>
+                <button type="submit" class="submit">Log in</button>
+            </form>
+        </div>
     </div>
-  </div>
+
+
+    <script>
+        var x = document.getElementById('login')
+        var y = document.getElementById('signup')
+        var z = document.getElementsByClassName('btn-contain')
+        var w = document.getElementsByClassName('login')
+        var v = document.getElementsByClassName('signup')
+        function signup(){
+          x.style.left = "450px"
+            y.style.left = "50px"
+            z[0].style.left = "0px"
+            v[0].style.color = "white"
+            w[0].style.color = "black"
+        }
+        function login(){
+            x.style.left = "50px"
+            y.style.left = "-450px"
+            z[0].style.left = "110px"
+            w[0].style.color = "white"
+            v[0].style.color = "black"
+        }
+    </script>
+    
+</body>
+</html>
