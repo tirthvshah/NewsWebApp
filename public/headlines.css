@@ -19,6 +19,8 @@ body {
 #sidebar{
     grid-area: sidebar;
     height: 100%;
+    max-height: calc(100vh - 3rem);
+    overflow-y: auto;
     position: fixed;
     top: 70px;
     color: white;
@@ -124,6 +126,9 @@ body {
 }
 .search-btn{
     color:#e84118;
+    outline: none;
+    /* background: none; */
+    border: none;
     float: right;
     width: 30px;
     height: 30px;
