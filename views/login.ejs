@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/users.css">
+    <link rel="stylesheet" type="text/css" href="/users.css">
 </head>
 <body>
 
     <div class="bg">
         <div class="form-box">
-            <%- include('./partials/messages'); %>
+            <h2 class="Heading">Web of news</h2>
             <div class="btn-box">
                 <div class="btn-contain"></div>
                 <button type="button" class="toggle-btn signup" onclick="signup()">Sign up</button>
@@ -47,6 +47,9 @@
                 <span>new user? <button id="newUse" onclick="signup()">Sign up</button></span>
                 <button type="submit" class="submit">Log in</button>
             </form>
+            <%- include('./partials/messages'); %>
+            <!-- <div style="position: absolute; left:50%; transform:translateX(-50%); bottom: 10px; background: #f2dede; color:#a94442; padding:10px;"> -->
+            <!-- </div> -->
         </div>
     </div>
 

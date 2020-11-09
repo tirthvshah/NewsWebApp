@@ -33,6 +33,7 @@
                             </button>
                         </form>
                     </div>
+                    <div><h6><i class="fas fa-user mr-2"></i><%= currentUser.email %></h6> </div>
         
                 </div>
             </nav>
@@ -43,9 +44,9 @@
                     <i class="fas fa-globe mr-2" aria-hidden="true"></i>
                     <a href="/">Top Stories</a>
                 </li>
-                <hr>
+                <hr style="background-color: rgba(255,255,255,.7);">
                 <li><i class="fas fa-laptop-medical mr-2"></i><a href="/filters/category/Covid">COVID-19</a></li>
-                <hr>
+                <hr style="background-color: rgba(255,255,255,.7);">
                 <li><i class="fab fa-font-awesome-flag mr-2"></i><a href="/filters/country/in">India</a></li>
                 <li><i class="fas fa-globe-asia mr-2"></i><a href="/filters/category/World">World</a></li>
                 <li><i class="fas fa-briefcase mr-2"></i><a href="/filters/category/Business">Business</a></li>
@@ -54,6 +55,9 @@
                 <li><i class="fas fa-running mr-2"></i><a href="/filters/category/Sports">Sports</a></li>
                 <li><i class="fas fa-flask mr-2"></i><a href="/filters/category/Science">Science</a></li>
                 <li><i class="fas fa-heartbeat mr-2"></i><a href="/filters/category/Health">Health</a></li>
+                <hr style=" background-color: rgba(255,255,255,.7);">
+                <li><i class="fas fa-info-circle mr-2"></i><a href="/filters/category/Health">About</a></li>
+                <li><form action="/logout" method="GET"><i class="fas fa-sign-out-alt"></i><button type="submit" style="background: none;border: none; color: white; outline: none;">Logout</button></form></li>
             </ul>
         </nav>
         <div class="articles" id="articles">

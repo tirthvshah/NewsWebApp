@@ -1,29 +1,29 @@
 <% if(typeof errors != 'undefined'){ %> <% errors.forEach(function(error) { %>
-  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <div style="color: #721c24; background-color: #f8d7da; border-color: #f5c6cb; position: absolute; bottom: 1%; left: 10%; text-align: center; padding:13px 5px; margin-bottom:10px;">
     <%= error.msg %>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
+      <!-- <span aria-hidden="true">&times;</span> -->
     </button>
   </div>
   <% }); %> <% } %> <% if(success_msg != ''){ %>
-  <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <div style="color: #155724; background-color: #d4edda; border-color: #c3e6cb; position: absolute; bottom: 1%;  left: 50%; transform: translateX(-50%); text-align: center; padding:15px 10px; margin-bottom:10px;">
     <%= success_msg %>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
+      <!-- <span aria-hidden="true">&times;</span> -->
     </button>
   </div>
   <% } %> <% if(error_msg != ''){ %>
-  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <div style="color: #721c24; background-color: #f8d7da; border-color: #f5c6cb; position: absolute; bottom: 1%; left: 10%; text-align: center; padding:15px 5px; margin-bottom:10px;">
     <%= error_msg %>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
+      <!-- <span aria-hidden="true">&times;</span> -->
     </button>
   </div>
   <% } %> <% if(error != ''){ %>
-  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <div style="color: #721c24; background-color: #f8d7da; border-color: #f5c6cb; position: absolute; bottom: 1%; left: 10%; text-align: center; padding:15px 5px; margin-bottom:10px;">
     <%= error %>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
+      <!-- <span aria-hidden="true">&times;</span> -->
     </button>
   </div>
   <% } %>
