@@ -15,7 +15,7 @@
 
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="wrapper">
         <div id="top-nav">
             <nav class="navbar navbar-expand-lg ">
                 <div class="container-fluid align-items-center">
@@ -111,6 +111,9 @@
                     </button>
                 </div>
             </div>
+        </div>
+        <div id="top-point">
+            <a href="#wrapper"><i class="fas fa-chevron-circle-up navTop"></i></a>
         </div>       
     </div>
 
@@ -120,11 +123,22 @@
         var sidebar = document.getElementById('sidebar')
         var article = document.getElementById('articles')
         var weather = document.getElementsByClassName('containers')
+        var navTop = document.getElementById('top-point')
         but.addEventListener('click',()=>{
             sidebar.classList.toggle('active')
             article.classList.toggle('active')
             weather[0].classList.toggle('active')
             // wrap[0].classList.toggle('active')
+        })
+
+        window.addEventListener('scroll',()=>{
+            var scrollPos = window.scrollY
+            if (scrollPos > 500){
+                navTop.style.display = 'block';
+            }
+            else{
+                navTop.style.display = 'none';
+            }
         })
     </script>
  

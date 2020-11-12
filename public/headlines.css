@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'Roboto', sans-serif;
     background: #fafafa;
@@ -270,6 +274,19 @@ body {
     margin-left:-200px;
 }
 
+#top-point{
+    position: fixed;
+    right: 60px;
+    display: none;
+    bottom: 60px;
+    cursor: pointer;
+    transition: .5s;
+    z-index: 1000;
+}
+#top-point .navTop{
+    width: 50px;
+    height: auto;
+}
 
 @media (max-width:1350px){
     .search-txt{
@@ -368,6 +385,10 @@ body {
         top: 340px;
         max-width: 55%;
     }
+    #sidebar{
+        max-height: calc(100vh - 3rem);
+        overflow-y: auto;
+    }
 }
 
 @media (max-width: 830px) {
@@ -459,6 +480,10 @@ body {
     #articles{
         position: relative;
         top: 400px;
+    }
+    #sidebar{
+        max-height: calc(100vh - 4.5rem);
+        overflow-y: auto;
     }
 }
 @media (max-width:530px){
