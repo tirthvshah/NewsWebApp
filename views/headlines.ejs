@@ -33,7 +33,7 @@
                             </button>
                         </form>
                     </div>
-                    <div><h6><i class="fas fa-user mr-2"></i><%= currentUser.email %></h6> </div>
+                    <div class="profile" id='profile' data-profile="<%= currentUser.email %>"><i class="fas fa-user mr-2"></i><h6 class="" ><%= currentUser.email %></h6> </div>
         
                 </div>
             </nav>
@@ -124,6 +124,7 @@
         var article = document.getElementById('articles')
         var weather = document.getElementsByClassName('containers')
         var navTop = document.getElementById('top-point')
+
         but.addEventListener('click',()=>{
             sidebar.classList.toggle('active')
             article.classList.toggle('active')

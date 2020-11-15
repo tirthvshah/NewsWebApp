@@ -288,6 +288,37 @@ body {
     height: auto;
 }
 
+.profile{
+    border-radius: 5px;
+    padding: 10px 20px;
+    background: #2f3640;
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile[data-profile]::after{
+    content: attr(data-profile);
+    position: absolute;
+    padding: 5px 20px;
+    color: white;
+    font-size: .8em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    top: 10%;
+    right: 10px;
+    background: #2f3640;
+    z-index:999;
+    transform: scale(0);
+    transition: transform ease 200ms;
+}
+.profile:hover::after{
+    top:90%;
+    transform: scale(1);
+}
+
+
 @media (max-width:1350px){
     .search-txt{
         width: 500px;
@@ -485,6 +516,14 @@ body {
         max-height: calc(100vh - 4.5rem);
         overflow-y: auto;
     }
+    .profile h6{
+        display: none;
+    }
+    .profile{
+        background: transparent;
+        color: #2f3640;
+    }
+    
 }
 @media (max-width:530px){
     #articles{
