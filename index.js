@@ -7,13 +7,15 @@ const Searchroutes=require('./routes/search');
 const user=require('./routes/user');
 const Headlineroute = require('./routes/headline');
 const Aboutroute = require('./routes/about');
+const CookieSession=require('cookie-session');
 const passport=require('passport');
 const { ensureAuthenticated,forwardAuthenticated} = require('./config/auth');
 const flash = require('connect-flash');
 const session = require('express-session');
 
 app.use(
-    session({
+    CookieSession({
+      maxAge:24*60*60*1000,
       secret: 'secret',
       resave: true,
       saveUninitialized: true
