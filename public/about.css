@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&display=swap');
+
 
 *{
     margin:0;
@@ -36,7 +38,7 @@
     width: 55%;
     float: right;
     background-color: #fdfdfd;
-    padding: 140px;
+    padding: 120px;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -206,6 +208,19 @@
     background: #f7f5ec;
 }
 
+footer{
+    font-family: 'Roboto Mono', sans-serif;
+}
+#footer{
+    height: 10vh;
+    background: #2f3640;
+    display: flex;
+    align-items: center;
+}
+.footer-cont{
+    margin: auto;
+}
+
 @media screen and (max-width:1200px){
     .inner-section{
         padding: 80px;
@@ -241,7 +256,7 @@
         padding: 0;
     }
     .inner-section{
-        padding: 60px;
+        padding: 80px;
     }
     .skills button{
         font-size: 19px;
