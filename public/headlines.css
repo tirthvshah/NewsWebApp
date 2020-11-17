@@ -118,9 +118,9 @@ body {
 }
 .search-box{
     position: absolute;
-    top: 50%;
+    top: 10px;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translateX(-50%);
     background: #2f3640;
     height: 50px;
     border-radius: 40px;
@@ -289,18 +289,23 @@ body {
 }
 
 .profile{
+    position: absolute;
+    right: 3%;
+    top: 18px;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 5px 15px;
     background: #2f3640;
     color: white;
+    font-size: .9rem;
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    line-height: 25px;
 }
 .profile[data-profile]::after{
     content: attr(data-profile);
     position: absolute;
-    padding: 5px 20px;
+    padding: 5px 15px;
     color: white;
     font-size: .8em;
     display: inline-flex;
@@ -311,11 +316,21 @@ body {
     background: #2f3640;
     z-index:999;
     transform: scale(0);
-    transition: transform ease 200ms;
+    transition: all ease .35s;
 }
 .profile:hover::after{
-    top:90%;
+    top:110%;
     transform: scale(1);
+}
+.profile .prof-icon{
+    height:28px;
+    width:28px;
+    text-align:center;
+    background:#2f3640;
+    color:white;
+    padding:8px 5px;
+    border-radius:50%; 
+    box-shadow: 1px 1px 4px rgba(0,0,0,.3);
 }
 
 
@@ -522,6 +537,12 @@ body {
     .profile{
         background: transparent;
         color: #2f3640;
+    }
+    .profile .prof-icon{
+        height: 35px;
+        width: 35px;
+        position: relative;
+        top: -6px;
     }
     
 }
