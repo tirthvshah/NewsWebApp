@@ -71,7 +71,7 @@
                    <div class="remcont">
                         <h5 ><%= article.title %></h5>
                         <% if(article.content){ %>
-                        <p ><%= article.content.substring(0,150) %>...<form method="post" action="filters/data">
+                        <p ><%= article.content.substring(0,150) %>...<form method="post" action="http://127.0.0.1:3000/filters/data">
                             <input type="hidden" name="name" value="<%=article.url %>" /> 
                             <a onclick="this.parentNode.submit();">click to read full articles</a>
                           </form></p>
