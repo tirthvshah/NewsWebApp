@@ -336,6 +336,20 @@ body {
     box-shadow: 1px 1px 4px rgba(0,0,0,.3);
 }
 
+.articles .pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: -20%;
+}
+.articles .pagination ul li a{
+    padding:10px 20px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,.3);
+}
+.articles .pagination ul li:nth-of-type(2) a{
+    padding: 10px 30px;
+}
 
 @media (max-width:1350px){
     .search-txt{

@@ -61,7 +61,8 @@
             </ul>
         </nav>
         <div class="articles" id="articles">
-            <% data.forEach(function(article){ %>
+            <% data.results.forEach(function(article){ %>
+
                 <% if(article.urlToImage){ %>
                 <div class="contain">
                    <div class="imgcont">
@@ -70,7 +71,7 @@
                    <div class="remcont">
                         <h5 ><%= article.title %></h5>
                         <% if(article.content){ %>
-                        <p ><%= article.content.substring(0,150) %>...<form method="post" action="filters/data">
+                        <p ><%= article.content.substring(0,150) %>...<form method="post" action="http://127.0.0.1:3000/filters/data">
                             <input type="hidden" name="name" value="<%=article.url %>" /> 
                             <a onclick="this.parentNode.submit();">click to read full articles</a>
                           </form></p>
@@ -87,8 +88,36 @@
                 </div>
                 <% } %>
             <% }) %>
+        
+            <div class="pagination">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <%if(data.previous!=undefined){ 
+                            var a=parseInt(data.previous.page);
+                            %>
+                                <a class="page-link" href="<%=data.origin.url%>?page=<%=a%>">Previous</a>
+                            <% } else{%>
+                            <a class="btn disabled">Previous</a>
+                            <% } %>
+                        </li>
+                        <li class="page-item">
+                            <%if(data.next!=undefined){ 
+                                var x=parseInt(data.next.page);
+                                %>
+                                <% if(data.origin.url.split('?')[0]=='/search'){ %>
+                                    <a class="page-link" href="<%=data.origin.url%>&page=<%=x%>">Next</a>
+                                <% } else {%>
+                                    <a class="page-link" href="<%=data.origin.url%>?page=<%=x%>">Next</a>
+                                <% }%>
+                            <% }else { %>
+                                <a class="btn disabled">Next</a>
+                            <% } %>
+                        </li>
+                    </ul>
+                  </nav>
+            </div>
         </div>
-
         <div class="containers row justify-content-center">
             <div class="content">
                 <div class="general-info ">
@@ -115,14 +144,12 @@
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
-            </div>
+            </div>           
         </div>
         <div id="top-point">
             <a href="#wrapper"><i class="fas fa-chevron-circle-up navTop"></i></a>
         </div>       
     </div>
-
-    
     <script>
         var but = document.getElementById('sidebarCollapse')
         var sidebar = document.getElementById('sidebar')
