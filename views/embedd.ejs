@@ -12,6 +12,19 @@
     <!-- <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBC2CS-TwA0OJ6W2Nm15TphdB43s78-wl4&libraries=places&callback=initMap"> -->
     <!-- </script> -->
     <!-- <script defer src='js/weather.js'></script> -->
+    
+    <style>
+        #back{
+            color: #2f3640;
+            position: absolute;
+            top: 16px;
+        }
+        #back .back-arr{
+            width: 35px;
+            height: auto;
+        }
+
+    </style>
 
 </head>
 <body>
@@ -20,10 +33,11 @@
             <nav class="navbar navbar-expand-lg ">
                 <div class="container-fluid align-items-center">
         
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <h5 class="brand">Mirai News</h5>
+                    <a href="/" id="back">
+                        <!-- <i class="fas fa-bars"></i> -->
+                        <i class="fas fa-arrow-circle-left back-arr "></i>
+                    </a>
+                    <h5 class="brand">Web of News</h5>
 
                     <div class="search-box">
                         <form action="/search" method="GET">
@@ -37,6 +51,7 @@
                 </div>
             </nav>
         </div>
-    <iframe src="<%=data.name %>" width="300%;" height="725px;"></iframe>
+    </div>
+    <iframe src="<%=data.name %>" width="100%;" height="757px;"></iframe>
 </body>
 </html>

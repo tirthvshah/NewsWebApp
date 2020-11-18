@@ -75,7 +75,10 @@
                             <a onclick="this.parentNode.submit();">click to read full articles</a>
                           </form></p>
                         <% } else if (!article.content) {%>
-                            <a href="#">Click to read full article</a>
+                            <form method="post" action="filters/data">
+                                <input type="hidden" name="name" value="<%=article.url %>" /> 
+                                <a onclick="this.parentNode.submit();">click to read full articles</a>
+                              </form>
                         <% }%>
                         <div class='src'>
                             <small><%=article.source.name %><i class="far fa-check-circle ml-2"></i></small>
