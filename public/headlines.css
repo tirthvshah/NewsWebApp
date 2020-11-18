@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'Roboto', sans-serif;
     background: #fafafa;
@@ -62,6 +66,7 @@ body {
 #sidebarCollapse{
     border-radius: 50%;
     margin-top: 9px;
+    outline: none;
     background: #2f3640;
     color:#e84118;
 }
@@ -114,9 +119,9 @@ body {
 }
 .search-box{
     position: absolute;
-    top: 50%;
+    top: 10px;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translateX(-50%);
     background: #2f3640;
     height: 50px;
     border-radius: 40px;
@@ -170,6 +175,7 @@ body {
     border: 20px;
     box-shadow: 0 5px 10px rgba(0,0,0,.4);
     transition: .3s all ease-out;
+    position: fixed;
 }
 .containers.content{
     padding: 40px;
@@ -270,6 +276,66 @@ body {
     margin-left:-200px;
 }
 
+#top-point{
+    position: fixed;
+    right: 50px;
+    display: none;
+    bottom: 60px;
+    cursor: pointer;
+    transition: .5s;
+    z-index: 1000;
+}
+#top-point .navTop{
+    width: 50px;
+    height: auto;
+    color: #2f3640;
+}
+
+.profile{
+    position: absolute;
+    right: 3%;
+    top: 18px;
+    border-radius: 5px;
+    padding: 5px 15px;
+    background: #2f3640;
+    color: white;
+    font-size: .9rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 25px;
+}
+.profile[data-profile]::after{
+    content: attr(data-profile);
+    position: absolute;
+    padding: 5px 15px;
+    color: white;
+    font-size: .8em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    top: 10%;
+    right: 10px;
+    background: #2f3640;
+    z-index:999;
+    transform: scale(0);
+    transition: all ease .35s;
+}
+.profile:hover::after{
+    top:110%;
+    transform: scale(1);
+}
+.profile .prof-icon{
+    height:28px;
+    width:28px;
+    text-align:center;
+    background:#2f3640;
+    color:white;
+    padding:8px 5px;
+    border-radius:50%; 
+    box-shadow: 1px 1px 4px rgba(0,0,0,.3);
+}
+
 
 @media (max-width:1350px){
     .search-txt{
@@ -368,6 +434,10 @@ body {
         top: 340px;
         max-width: 55%;
     }
+    #sidebar{
+        max-height: calc(100vh - 3rem);
+        overflow-y: auto;
+    }
 }
 
 @media (max-width: 830px) {
@@ -390,8 +460,6 @@ body {
     }
     #articles .contain{
         position: relative;
-        /* left: 50%;
-        transform: translateX(-50%); */
         right: 5%;
         width: 600px;
     }
@@ -460,6 +528,24 @@ body {
         position: relative;
         top: 400px;
     }
+    #sidebar{
+        max-height: calc(100vh - 4.5rem);
+        overflow-y: auto;
+    }
+    .profile h6{
+        display: none;
+    }
+    .profile{
+        background: transparent;
+        color: #2f3640;
+    }
+    .profile .prof-icon{
+        height: 35px;
+        width: 35px;
+        position: relative;
+        top: -6px;
+    }
+    
 }
 @media (max-width:530px){
     #articles{
