@@ -3,8 +3,8 @@ const routes=express.Router();
 const {database}=require('../config/helper');
 const PasswordHash= require('password-hash');
 const passport=require('passport');
-routes.get('/login',(req,res)=>{
-    res.render('login');
+routes.get('/',(req,res)=>{
+    res.render('user');
 });
 
 // routes.get('/register',(req,res)=>{
@@ -69,7 +69,7 @@ routes.post('/register',(req,res)=>{
 routes.post('/login', (req, res, next) => {
     passport.authenticate('local', {
       successRedirect: '/',
-      failureRedirect: '/users/login',
+      failureRedirect: '/users',
       failureFlash:true
     })(req, res, next);
   });

@@ -66,6 +66,7 @@ body {
 #sidebarCollapse{
     border-radius: 50%;
     margin-top: 9px;
+    outline: none;
     background: #2f3640;
     color:#e84118;
 }
