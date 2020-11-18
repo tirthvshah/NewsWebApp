@@ -30,7 +30,7 @@ router.get('/',(req,res)=>{
            var fullUrl = req.originalUrl.split('?page');
            /* console.log(fullUrl); */
             var page = parseInt(req.query.page)
-            const limit = parseInt(5)
+            const limit = parseInt(7)
             if(isNaN(page)){
                 page=1
             }
