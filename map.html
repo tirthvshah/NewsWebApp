@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location</title>
+</head>
+<body>
+    <div class="container" style="text-align: center;">
+        <input name="get_location" type="submit" class="submit" id="get_location" value="Get my location" style="margin: 30px; height: 50px;">
+        <div id="map">
+            <iframe id="google_map" width="800" height="600" scrolling="no" src="https://maps.google.co.in?output=embed"></iframe>
+        </div>
+    </div>
+
+    <script>
+        var c = function(pos){
+            var lat = pos.coords.latitude,
+            long = pos.coords.longitude,
+            coords = lat + ',' + long;
+            document.getElementById('google_map').setAttribute('src','https://maps.google.co.in?q='+ coords +'&z=60&output=embed')
+        }
+
+        document.getElementById('get_location').onclick = function(){
+            navigator.geolocation.getCurrentPosition(c);
+            return false;
+        }
+    </script>
+</body>
+</html>
