@@ -72,27 +72,51 @@
 
             <div class="our-team">
                 <div class="pic">
-                    <img src="]" alt="">
+                    <img src="Tirth.jpg" alt="">
                 </div>
                 <div class="team-content">
-                    <h3 class="title">Placeholder</h3>
-                    <span class="post">Placeholder</span>
+                    <h3 class="title">Tirth Shah</h3>
+                    <span class="post">React Developer <br> Data Science enthusiast</span>
                 </div>
                 <ul class="social">
                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                    <li><a href="#"><i class="fab fa-github"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/tirth-shah-09ab7a194/"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="https://github.com/tirthvshah"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://www.instagram.com/tirth.shahhh/"><i class="fab fa-instagram"></i></a></li>
 
                 </ul>
             </div>
         </div>
+    </section>
+    <section id="maps">
+        <h1 class="text-center font-weight-bold text-uppercase mb-4">Our location</h1>
+        <div id="map">
+            <!-- <iframe id="google_map" width="800" height="600" scrolling="no" src="https://maps.google.co.in?output=embed"></iframe> -->
+            <iframe id="google_map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15085.607725270658!2d72.8710809!3d19.046058!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x473006136ad440dc!2sK.%20J.%20Somaiya%20Institute%20of%20Engineering%20and%20Information%20Technology!5e0!3m2!1sen!2sin!4v1606366035546!5m2!1sen!2sin"  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+        <input name="get_location" type="submit" class="submit" id="get_location" value="Get your current location" style="">
     </section>
     <footer id="footer">
         <div class="text-white footer-cont">
             <p>Copyright 2020 &copy; all right reserved</p>                
         </div>
     </footer>
+
+
+
+    <script>
+        var c = function(pos){
+            var lat = pos.coords.latitude,
+            long = pos.coords.longitude,
+            coords = lat + ',' + long;
+            document.getElementById('google_map').setAttribute('src','https://maps.google.co.in?q='+ coords +'&output=embed')
+        }
+
+        document.getElementById('get_location').onclick = function(){
+            navigator.geolocation.getCurrentPosition(c);
+            return false;
+        }
+    </script>
     
 </body>
 </html>
