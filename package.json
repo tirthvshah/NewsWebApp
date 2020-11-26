@@ -12,6 +12,7 @@
     "axios": "^0.21.0",
     "connect-flash": "^0.1.1",
     "cookie-session": "^1.4.0",
+    "cric-live": "^1.0.19",
     "custom-env": "^2.0.1",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
