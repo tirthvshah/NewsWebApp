@@ -102,7 +102,6 @@ body {
     border-radius: 10px;
     margin: 20px 0;
     transform: translateX(-50%);
-    /* z-index: -9999; */
 }
 .articles .imgcont{
     width: 100%;
@@ -132,7 +131,6 @@ body {
 .search-btn{
     color:#e84118;
     outline: none;
-    /* background: none; */
     border: none;
     float: right;
     width: 30px;
@@ -169,7 +167,6 @@ body {
     position: absolute;
     top: 90px;
     left: 74%;
-    /* right: 3%; */
     display: flex;
     border:1px solid #dadce0;
     border: 20px;
@@ -198,7 +195,6 @@ body {
     font-weight: normal;
     margin-top: 10px;
   }
-/* .containers */
 .containers .details-section {
     display: flex;
     justify-content: space-between;
@@ -376,7 +372,6 @@ body {
         margin: 10px 0;
     }
     .city-search-contain{
-        /* margin: 10px; */
         margin-top: 20px;
     }
 
@@ -385,11 +380,6 @@ body {
         transform: translateX(-50%);
         top: 340px;
         max-width: 55%;
-    }
-}
-@media (max-width:1100px){
-    .search-txt{
-        width: 400px;
     }
 }
 @media (max-width: 1220px){
@@ -423,7 +413,11 @@ body {
         max-width: 80%;
     }
 }
-
+@media (max-width:1100px){
+    .search-txt{
+        width: 400px;
+    }
+}
 @media (max-width:990px){
     .brand{
         position: absolute;
@@ -437,7 +431,6 @@ body {
         left: 50%;
         transform: translateX(-50%);
         height: 250px;
-        /* width: 700px; */
         max-width: 80%;
     }
     #articles{
@@ -523,12 +516,10 @@ body {
         transform: translateX(-50%);
         height: 300px;
         width: 500px;
-        /* max-width: 55%; */
     }
     .content{
         display: flex;
         flex-direction: column;
-        /* justify-content: center;*/
         align-items: center; 
         margin: 0 10px;
         position: relative;
@@ -593,7 +584,6 @@ body {
         left: 50%;
         transform: translateX(-45%);
         height: 300px;
-        /* width: 500px; */
         max-width: 90%;
     }
 }
@@ -604,7 +594,4 @@ body {
         transform:translateX(-50%);
     }
 }
-
-
-/* weather */
 
