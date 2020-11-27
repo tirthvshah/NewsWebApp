@@ -23,10 +23,11 @@ body {
 #sidebar{
     grid-area: sidebar;
     height: 100%;
-    max-height: calc(100vh - 3rem);
+    max-height: calc(100vh - 4rem);
     overflow-y: auto;
     position: fixed;
     top: 70px;
+    overflow-x: hidden;
     color: white;
     transition: all .3s ease;
     width: 300px;
