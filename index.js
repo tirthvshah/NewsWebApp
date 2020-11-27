@@ -6,6 +6,7 @@ const filterroutes=require('./routes/filters');
 const Searchroutes=require('./routes/search');
 const user=require('./routes/user');
 const Headlineroute = require('./routes/headline');
+const CovidTracker = require('./routes/covid-tracker');
 const Aboutroute = require('./routes/about');
 const CookieSession=require('cookie-session');
 const passport=require('passport');
@@ -40,9 +41,6 @@ app.use('/headlines',ensureAuthenticated,Headlineroute)
 app.get('/',(req,res)=>{
     res.redirect('/headlines')
 })
-// app.post('/weather',(req,res)=>{
-//   console.log(req.body)
-// })
 
 app.listen('3000',() =>{
     console.log("Server started ");
@@ -53,6 +51,7 @@ app.use('/filters',ensureAuthenticated,filterroutes);
 app.use('/search',ensureAuthenticated,Searchroutes);
 app.use('/users',forwardAuthenticated,user);
 app.use('/about',ensureAuthenticated, Aboutroute);
+app.use('/covid-tracker',ensureAuthenticated, CovidTracker);
 app.get('/logout',(req,res)=>{
   req.logout();
   req.flash('success_msg', 'You are logged out');
