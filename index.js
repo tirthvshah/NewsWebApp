@@ -14,6 +14,11 @@ const { ensureAuthenticated,forwardAuthenticated} = require('./config/auth');
 const flash = require('connect-flash');
 const session = require('express-session');
 
+if (process.env.NODE_ENV !== "production"){
+	require('dotenv').config()
+}
+
+
 app.use(
     CookieSession({
       maxAge:24*60*60*1000,

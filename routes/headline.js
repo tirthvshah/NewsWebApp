@@ -5,7 +5,7 @@ const { response } = require('..')
 
 
 // router.get('/',(req,res)=>{
-//     axios.get(`https://gnews.io/api/v4/search?q=Apple&lang=en&max=100&token=f7868935381cdd14750fe3e6b7ed3b5d`)
+//     axios.get(`https://gnews.io/api/v4/search?q=Apple&lang=en&max=100&token=`)
 //     .then(response=>{
 //         if(response.status == 200){
 //             console.log(response.data.articles)
@@ -19,9 +19,11 @@ const { response } = require('..')
 //     })
 // })
 
+const API_KEY = process.env.API_KEY
+
 router.get('/',(req,res)=>{
-    // axios.get(`https://newsapi.org/v2/everything?q="sports"OR"business"OR"entertainment"OR"politics"OR"technology"&sortBy=publishedAt&pageSize=100&sortBy=relevancy&apiKey=4b2821b99dd64a708f00564be388c26a`)
-    axios.get(`http://newsapi.org/v2/top-headlines?country=in&apiKey=4b2821b99dd64a708f00564be388c26a`)
+    // axios.get(`https://newsapi.org/v2/everything?q="sports"OR"business"OR"entertainment"OR"politics"OR"technology"&sortBy=publishedAt&pageSize=100&sortBy=relevancy&apiKey=${API_KEY}`)
+    axios.get(`http://newsapi.org/v2/top-headlines?country=in&apiKey=${API_KEY}`)
     .then(response=>{
         if(response.status == 200){
 /*             console.log(response.data.articles)
